@@ -6,11 +6,11 @@ using UnityEngine.UIElements;
 
 public class Direction : MonoBehaviour
 {
-    Vector3 restPosition;
-    Vector3 cursorPosition;
-    Vector3 cursorWorldPosition;
-    float angleToDirection;
-    
+    public Vector3 restPosition;
+    public Vector3 cursorPosition;
+    public Vector3 cursorWorldPosition;
+    public float angleToDirection;
+    public Vector3 direction;
     void Update()
     {
         //POSICION DEL PLAYER
@@ -21,7 +21,7 @@ public class Direction : MonoBehaviour
         cursorWorldPosition = Camera.main.ScreenToWorldPoint(cursorPosition);
         cursorWorldPosition.z = 0;
 
-        Vector3 direction = cursorWorldPosition - transform.position;
+        direction = cursorWorldPosition - transform.position;
 
         //DIRECCION PLAYER - CURSOR
         angleToDirection = Vector3.SignedAngle(restPosition, direction, Vector3.forward);
@@ -29,7 +29,6 @@ public class Direction : MonoBehaviour
         //PASAR EL EJE DE 'DIRECION - CURSOR' A LA ROTACION DEL PLAYER
         transform.rotation = Quaternion.Euler(0, 0, angleToDirection);
 
-        print(cursorWorldPosition);
     }
 
 }
