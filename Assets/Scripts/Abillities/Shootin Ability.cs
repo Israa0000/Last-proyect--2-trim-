@@ -6,14 +6,6 @@ public class ShootingAbility : Ability
     public Transform firePoint;
     public float projectileSpeed;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Trigger();
-        }
-    }
-
     public override void Trigger()
     {
         if (!isInCooldown)
