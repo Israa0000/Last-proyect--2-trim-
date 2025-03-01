@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Enemy enemy;
+
+    [Header("Attributes")]
     public float currentHealth;
     public float maxHealth = 100;
 
@@ -13,20 +15,19 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void Damage()
+    public void TakeDamage(float damage)
     {
-        currentHealth -= enemy.damage;
+        currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
-            Die(); 
+            Die();
         }
     }
 
-    void Die()
+    public void Die()
     {
-        Debug.Log("Player has died.");
+        Debug.Log("Player has died");
         Destroy(gameObject);
     }
-
 }

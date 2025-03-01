@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float enemySpeed;
-    Transform playerPosition;
+    [Header("Attributes")]
+    public float enemySpeed = 5;
     public float damage = 20;
-    Player player; 
+    public float currentHealth = 100;
+
+    [SerializeField] Gradient gradient;
+    Player player;
+    Transform playerPosition;
 
     void Start()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        playerPosition = player.transform;
+
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            playerPosition = playerObject.transform;
+            player = playerObject.GetComponent<Player>();
+        }
     }
+
     void Update()
     {
         Move();
+        EnemyColor();
     }
 
     void Move()
@@ -29,7 +40,35 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDamage(damage);
+            }
+            Destroy(gameObject);
+        }
     }
 
+    public void EnemyColor()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = gradient.Evaluate(currentHealth / 100f);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }
