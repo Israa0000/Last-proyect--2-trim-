@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Enemy enemy;
     public float currentHealth;
     public float maxHealth = 100;
 
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
 
     public void Damage()
     {
-        currentHealth -= damage;
+        currentHealth -= enemy.damage;
 
         if (currentHealth <= 0)
         {

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float enemySpeed;
     Transform playerPosition;
     public float damage = 20;
+    Player player; 
 
     void Start()
     {
@@ -28,11 +29,6 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Player player = GetComponent<Player>();
-        if (player != null)
-        {
-            player.Damage(damage);
-        }
         Destroy(gameObject);
     }
 
