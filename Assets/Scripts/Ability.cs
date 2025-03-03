@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Ability : MonoBehaviour
 {
@@ -6,13 +7,13 @@ public abstract class Ability : MonoBehaviour
     public Sprite abilityIcon;
     public float cooldownDuration;
     public bool isInCooldown;
-
     public abstract void Trigger();
 
     protected void StartCooldown()
     {
         isInCooldown = true;
         Invoke(nameof(ResetCooldown), cooldownDuration);
+
     }
 
     private void ResetCooldown()

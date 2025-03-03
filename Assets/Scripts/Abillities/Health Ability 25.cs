@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class HealAbility : Ability
 {
-    public int healAmount;
+    public float healAmount;
+    public Player player;
 
     public override void Trigger()
     {
@@ -15,6 +16,7 @@ public class HealAbility : Ability
 
     private void Heal()
     {
+        player.currentHealth += healAmount;
         Debug.Log("Healing for " + healAmount + " HP");
     }
 }

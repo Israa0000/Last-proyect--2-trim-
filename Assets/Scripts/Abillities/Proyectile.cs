@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Enemy enemy;
-
     [Header("Attributes")]
     public float damage = 50;
     private void Update()

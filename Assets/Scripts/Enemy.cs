@@ -8,9 +8,8 @@ public class Enemy : MonoBehaviour
     public float enemySpeed = 5;
     public float damage = 20;
     public float currentHealth = 100;
-
     [SerializeField] Gradient gradient;
-    Player player;
+
     Transform playerPosition;
 
     void Start()
@@ -20,7 +19,6 @@ public class Enemy : MonoBehaviour
         if (playerObject != null)
         {
             playerPosition = playerObject.transform;
-            player = playerObject.GetComponent<Player>();
         }
     }
 
@@ -54,7 +52,7 @@ public class Enemy : MonoBehaviour
     public void EnemyColor()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = gradient.Evaluate(currentHealth / 100f);
+        spriteRenderer.color = gradient.Evaluate(currentHealth / 100);
     }
 
     public void TakeDamage(float damage)
