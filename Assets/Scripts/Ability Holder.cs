@@ -1,8 +1,9 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class AbilityHolder : MonoBehaviour
 {
     [SerializeField] private Ability[] abilities;
+    [SerializeField] private Image[] icons;
     private int currentAbilityIndex;
 
     void Update()

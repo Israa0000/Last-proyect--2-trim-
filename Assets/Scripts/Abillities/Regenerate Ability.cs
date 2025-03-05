@@ -21,7 +21,6 @@ public class Regenerate : Ability
         if (!isInCooldown)
         {
             ActivateRegeneration();
-            StartCooldown();
         }
     }
 
@@ -54,6 +53,7 @@ public class Regenerate : Ability
             if (durationTimer <= 0)
             {
                 isRegenerating = false;
+                StartCooldown();
                 Debug.Log("Regeneration ended");
             }
 
