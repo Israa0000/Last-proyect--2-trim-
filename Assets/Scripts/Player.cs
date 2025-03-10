@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -54,6 +53,5 @@ public class Player : MonoBehaviour
             currentHealth += 1;
             time = 0;
         }
-
     }
 }

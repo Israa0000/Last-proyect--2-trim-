@@ -5628,7 +5628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1148158146
 Transform:
   m_ObjectHideFlags: 0
@@ -5694,7 +5694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 190, y: 50}
+  m_AnchoredPosition: {x: 120, y: 50}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174018045
@@ -5717,8 +5717,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 5ac0082ba0584de47a98e31e67ced067, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5769,7 +5769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 120, y: 50}
+  m_AnchoredPosition: {x: 190, y: 50}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265810096
@@ -5792,8 +5792,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 5ac0082ba0584de47a98e31e67ced067, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5953,8 +5953,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1300539275}
   - component: {fileID: 1300539281}
-  - component: {fileID: 1300539284}
   - component: {fileID: 1300539277}
+  - component: {fileID: 1300539285}
+  - component: {fileID: 1300539284}
   - component: {fileID: 1300539283}
   - component: {fileID: 1300539282}
   - component: {fileID: 1300539278}
@@ -6075,7 +6076,13 @@ MonoBehaviour:
   - {fileID: 1300539278}
   - {fileID: 1300539283}
   - {fileID: 1300539284}
-  icons: []
+  - {fileID: 1300539285}
+  icons:
+  - {fileID: 1620995667}
+  - {fileID: 1174018045}
+  - {fileID: 1265810096}
+  - {fileID: 1938896536}
+  - {fileID: 1365564708}
 --- !u!114 &1300539278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6089,7 +6096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Normal Proyectile
-  abilityIcon: {fileID: 0}
+  abilityIcon: {fileID: 4000224601824675808, guid: 9f8e68513b7ed544286a9ceb2fab7136, type: 3}
   cooldownDuration: 0.2
   isInCooldown: 0
   projectilePrefab: {fileID: 178715372299664194, guid: e0a229ee0a7fd12458e36cc27e22d83a, type: 3}
@@ -6201,7 +6208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: 25 Heal
-  abilityIcon: {fileID: -4735749982427946525, guid: 8eac3a4b06fa8be43bbc4279cb8c3835, type: 3}
+  abilityIcon: {fileID: 6785344007475938101, guid: ce06845b7a8ff4e419a2c0d566129399, type: 3}
   cooldownDuration: 3
   isInCooldown: 0
   healAmount: 25
@@ -6219,7 +6226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Heal Full
-  abilityIcon: {fileID: 0}
+  abilityIcon: {fileID: -2268509530798868826, guid: 043cdf31516e5954083379c7786a8dbe, type: 3}
   cooldownDuration: 6
   isInCooldown: 0
   player: {fileID: 1300539281}
@@ -6236,7 +6243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityName: Regenerate
-  abilityIcon: {fileID: 0}
+  abilityIcon: {fileID: 5702951637426693383, guid: 4995c643b94ac20469bbf4ecd628a20a, type: 3}
   cooldownDuration: 5
   isInCooldown: 0
   player: {fileID: 1300539281}
@@ -6245,6 +6252,25 @@ MonoBehaviour:
   duration: 5
   isRegenerating: 0
   regenerateParticles: {fileID: 414402260}
+--- !u!114 &1300539285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300539272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfac4aa05a37cad4d98dd0f5ee6e3b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Big shoot
+  abilityIcon: {fileID: -9027239513129708404, guid: 4cb1a8417b18acd4cb4dd0170b34f387, type: 3}
+  cooldownDuration: 7
+  isInCooldown: 0
+  projectilePrefab: {fileID: 4830441814121954596, guid: fc216db589a16d545a46249336832cd3, type: 3}
+  firePoint: {fileID: 339747686}
+  projectileSpeed: 10
 --- !u!1 &1365564706
 GameObject:
   m_ObjectHideFlags: 0
@@ -6302,8 +6328,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 5ac0082ba0584de47a98e31e67ced067, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6377,8 +6403,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 5ac0082ba0584de47a98e31e67ced067, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6538,8 +6564,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 5ac0082ba0584de47a98e31e67ced067, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
