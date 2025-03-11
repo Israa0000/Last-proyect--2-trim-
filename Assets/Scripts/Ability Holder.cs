@@ -40,12 +40,14 @@ public class AbilityHolder : MonoBehaviour
             if (i < abilities.Length && abilities[i] != null)
             {
                 icons[i].sprite = abilities[i].abilityIcon;
-                icons[i].color = (i == currentAbilityIndex) ? Color.white : new Color(1, 1, 1, 0.5f); // Resalta la habilidad seleccionada
+                icons[i].color = (i == currentAbilityIndex) ? Color.white : new Color(1, 1, 1, 0.5f); 
+                //resalta la habilidad seleccionada
             }
             else
             {
                 icons[i].sprite = null;
-                icons[i].color = new Color(1, 1, 1, 0); // Oculta el ícono si no hay habilidad
+                icons[i].color = new Color(1, 1, 1, 0); 
+                //se oculta el ícono si no hay habilidad
             }
         }
     }
@@ -53,7 +55,7 @@ public class AbilityHolder : MonoBehaviour
     {
         for (int i = 0; i < abilities.Length; i++)
         {
-            int index = i; // Evitar problemas de cierre de variables
+            int index = i;
             if (abilities[i] != null)
             {
                 abilities[i].OnCooldownStart += (duration) => StartCoroutine(StartCooldownUI(index, duration));
@@ -69,10 +71,10 @@ public class AbilityHolder : MonoBehaviour
             elapsed += Time.deltaTime;
             float fillValue = 1 - (elapsed / duration);
             icons[index].fillAmount = fillValue;
-            yield return null; // Espera un frame antes de continuar
+            yield return null; // Ese espera un frame antes de continuar
         }
 
-        icons[index].fillAmount = 1; // Reiniciar el icono al final del cooldown
+        icons[index].fillAmount = 1; // se reinicia el icono al final del cooldown
     }
 }
 
