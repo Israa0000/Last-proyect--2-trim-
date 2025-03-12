@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] float time;
     public Enemy enemy;
+    [SerializeField] Gradient gradient;
+    public SpriteRenderer spriteRenderer;
 
     [Header("Attributes")]
     public float currentHealth;
@@ -15,6 +18,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
     }
 
@@ -27,6 +31,7 @@ public class Player : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        currentColor();
     }
 
     public void TakeDamage(float damage)
@@ -53,5 +58,10 @@ public class Player : MonoBehaviour
             currentHealth += 1;
             time = 0;
         }
+    }
+
+    void currentColor()
+    {
+        spriteRenderer.color = gradient.Evaluate(currentHealth/ 100);
     }
 }

@@ -13,8 +13,8 @@ public class Regenerate : Ability
     [Header("Particles")]
     [SerializeField] ParticleSystem regenerateParticles;
 
-    private float regenTimer;     
-    private float durationTimer;
+    private float regenTime;     
+    private float durationTime;
 
     public override void Trigger()
     {
@@ -27,8 +27,8 @@ public class Regenerate : Ability
     private void ActivateRegeneration()
     {
         isRegenerating = true;
-        regenTimer = 0f;
-        durationTimer = duration;
+        regenTime = 0f;
+        durationTime = duration;
 
         if (regenerateParticles != null && !regenerateParticles.isPlaying)
         {
@@ -40,17 +40,17 @@ public class Regenerate : Ability
     {
         if (isRegenerating)
         {
-            regenTimer += Time.deltaTime;
-            durationTimer -= Time.deltaTime;
+            regenTime += Time.deltaTime;
+            durationTime -= Time.deltaTime;
 
 
-            if (regenTimer >= regenInterval)
+            if (regenTime >= regenInterval)
             {
                 RegenerateHealth();
-                regenTimer = 0f; 
+                regenTime = 0f; 
             }
 
-            if (durationTimer <= 0)
+            if (durationTime <= 0)
             {
                 isRegenerating = false;
                 StartCooldown();
